@@ -1,4 +1,4 @@
-#Projet : Hermes
+## Projet : Hermes ##
 Le nom de l'application est une réference au dieu grec antique, qui aurait été l'inventeur du langage et le révélateur de l'esprit humain, ainsi que de la pensée.
 
 <br>
