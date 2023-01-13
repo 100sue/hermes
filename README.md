@@ -3,6 +3,10 @@ Le nom de l'application est une réference au dieu grec antique, qui aurait ét�
 
 <br>
 
+## Project : Hermes ##
+The name of the application is a reference to the ancient Greek god, who was said to have been the inventor of language and the revealer of the human spirit, as well as of thought.
+
+<br>
 
 This template should help get you started developing with Vue 3 in Vite.
 
