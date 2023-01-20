@@ -1,18 +1,21 @@
 const express = require('express');
-const app = require('express');
-const cors = require ('cors');
+const app = express();
+const cors = require('cors');
 const bodyParser = require('body-parser');
+const dotenv = require ('dotenv').config();
 const fs = require('fs');
 
 
 // Configuration de l'openai (voir https://beta.openai.com/docs/api-reference/making-requests)
 
-const { Configuration, OpenAIApi } = require ('openai');
-const configuration = new configuration({ apikey:'sk...'})
+const { Configuration, OpenAIApi } = require('openai');
+const configuration = new Configuration({ apikey: process.env.OPENAI_API_KEY })
 const openai = new OpenAIApi(configuration);
 
 const AWS = require('aws-sdk');
 AWS.config.loadFromPath("awsCreds.json");
+
+
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -35,7 +38,7 @@ app.post('/api/text-to-audio-file', async (req, res) => {
     const params = {
         OutputFormat: "mp3",
         Text: completion.data.choices[0].text,
-        VoiceId: "Matthew"
+        VoiceId: "Léa"
     }
 
     polly.synthesizeSpeech(params, (err, data) => {
@@ -44,9 +47,9 @@ app.post('/api/text-to-audio-file', async (req, res) => {
             return;
         }
         let filePath = "../public/voice/";
-        let fileame = num + ".mp3"
+        let fileName = num + ".mp3"
 
-        if (num) fs.writeFileSync(filePath + __filename, data.AudioStream)
+        if (num) fs.writeFileSync(filePath + fileName, data.AudioStream)
     })
 
 // SetTimeout pour forcer le delai a s'executer:
@@ -56,5 +59,5 @@ app.post('/api/text-to-audio-file', async (req, res) => {
 })
 
 app.listen(4001, () => {
-    console.log(`Server is ready at http://localhost:4001`);
+    console.log(`Server started at http://localhost:4001`);
 })
