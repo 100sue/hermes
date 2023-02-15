@@ -8,6 +8,14 @@ The name of the application is a reference to the ancient Greek god, who was sai
 
 <br>
 
+<p align="center">
+<img src= "https://user-images.githubusercontent.com/90606431/219117860-f8cbe005-53f8-4f58-96e8-0dcb42710742.png" />
+</p>
+
+<br> 
+
+
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
@@ -35,3 +43,11 @@ npm run dev
 ```sh
 npm run build
 ```
+<br> 
+
+<p align="center">
+<img src= "https://user-images.githubusercontent.com/90606431/219118301-d7e222a0-04de-4d1e-b2d1-08b531d59a2e.png" />
+</p>
+
+
+
